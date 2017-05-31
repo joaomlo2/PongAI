@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour {
 	}
 	private static GameController instance;
 
+	public GameObject LeftPaddle;
+	public GameObject RightPaddle;
+
 	void Awake()
 	{
 		instance = this;

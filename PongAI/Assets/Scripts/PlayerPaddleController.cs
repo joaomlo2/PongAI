@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerPaddleController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+	public float Speed;
+
 	void Update () {
-		
+		_ProcessMovement ();
+	}
+
+	void _ProcessMovement(){
+		float mV = Input.GetAxis ("Vertical");
+		Vector3 move = new Vector3 (0.0f, 0.0f, mV);
+		GetComponent<Rigidbody> ().MovePosition (transform.position+(move*Speed));
 	}
 }
